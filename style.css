@@ -1,23 +1,4 @@
-.web_title_box {
+.card_container {
     margin: auto;
-    text-align: center;
-}
-
-.search_container {
-    
-    width: 250px;
-    height: auto;
-    background-color: blue;
-    margin: auto;
-    padding : 1%
-
-}
-
-.search_box {
-    width: 225px;
-    height: auto;
-    background-color: red;
-    /* 수평 중앙 정렬하기 */
-    margin: auto;
-    padding: 5%;
+    padding : auto;
 }
