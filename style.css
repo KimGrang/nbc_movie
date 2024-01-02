@@ -3,10 +3,15 @@
     padding:10px;
 
 }
-
+.main{
+    margin: auto;
+}
+.footer{
+    margin-bottom: 25px;
+}
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
 
 }
