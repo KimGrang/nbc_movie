@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,19 +9,19 @@
 </head>
 
 <body>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand">Won's Movie</a>
-            <form class="d-flex" role="search">
-                <input class="form-control" type="text" placeholder="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+    <div class="header">
+        
+        <input type="string" class="search_input" placeholder="type something">
+        <input type="button" class="serach_btn" value="search">
+    </div>
+    <div class="wrap">
+        <div class="container" id="movieList">
+
         </div>
-    </nav>
-    <div class="container-fluid" id="movieList"></div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+    </div>
+    <div class="footer">
+
+    </div>
     <script src="script.js"></script>
 </body>
 

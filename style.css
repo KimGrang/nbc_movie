@@ -1,4 +1,29 @@
+.header{
+    margin:10px;
+    padding:10px;
+
+}
+
 .container {
-    margin: auto;
-    padding : auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+
+}
+
+.card {
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+    flex: 1;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: yellow
+}
+
+.card-img-top {
+    border-radius: 20px 20px 20px 20px;
+}
+
+.search {
+    float: right;
 }
