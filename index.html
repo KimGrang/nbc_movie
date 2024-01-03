@@ -10,11 +10,15 @@
 
 <body>
     <div class="header">
-        
-        <input type="string" class="search_input" placeholder="type something">
-        <input type="button" class="serach_btn" value="search">
+        <div class="logo">
+            <a>Won's Movie</a>
+        </div>
+        <div class="search_box">
+            <input type="string" class="search_input" id="search" placeholder="type something" onkeyup="filter()">
+            <!-- <input type="button" class="serach_btn" value="search" onclick="filter()"> -->
+        </div>
     </div>
-    <div class="wrap">
+    <div class="main">
         <div class="container" id="movieList">
 
         </div>
