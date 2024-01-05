@@ -35,16 +35,29 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
 
     // cardList = document.querySelectorAll("#movieList > div");
     // console.log(cardList)
-    
+
   })
   .catch(err => console.error(err));
 
+// Function to filter movies based on user input
+function filterMovies() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
 
-function filter(){
-  let search = document.getElementById('search').value.toLowerCase();
-  console.log(search);
-  let cardList = document.querySelectorAll("#movieList > div");
-  console.log(cardList)
-  
+  cards.forEach(card => {
+    const title = card.querySelector('.card-title').innerText.toLowerCase();
+    const overview = card.querySelector('.card-text').innerText.toLowerCase();
 
+    if (title.includes(search) || overview.includes(search)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
 }
+
+// Event listener for search input
+document.getElementById('search').addEventListener('input', filterMovies);
+
+// Fetch top-rated movies when the page loads
+document.addEventListener('DOMContentLoaded', fetchTopRatedMovies);
