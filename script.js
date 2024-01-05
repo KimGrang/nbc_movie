@@ -34,8 +34,8 @@ function displayMovies(movies) {
 }
 
 // 검색
-document.querySelector('.search_btn').addEventListener('click', filterMovies);
-function filterMovies() {
+document.querySelector('.search_btn').addEventListener('click', searchMovies);
+function searchMovies() {
   const search = document.getElementById('search').value.toLowerCase();
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
