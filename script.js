@@ -33,9 +33,18 @@ function displayMovies(movies) {
   movieList.innerHTML = tempHtml;
 }
 
+// 이미지 클릭 시 ID 알림
+function idMovies(movies) {
+  document.querySelectorAll('.card-img-top').forEach((img, index) => {
+    img.addEventListener('click', function () {
+      const movieId = movies[index].id;
+      alert(`ID: ${movieId}`);
+    });
+  });
+}
+
 // 검색
-document.querySelector('.search_btn').addEventListener('click', searchMovies);
-function searchMovies() {
+const searchMovies = function () {
   const search = document.getElementById('search').value.toLowerCase();
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
@@ -47,13 +56,4 @@ function searchMovies() {
     }
   });
 }
-
-// 이미지 클릭 시 ID 알림
-function idMovies(movies) {
-  document.querySelectorAll('.card-img-top').forEach((img, index) => {
-    img.addEventListener('click', function () {
-      const movieId = movies[index].id;
-      alert(`ID: ${movieId}`);
-    });
-  });
-}
+document.querySelector('.search_btn').addEventListener('click', searchMovies);
