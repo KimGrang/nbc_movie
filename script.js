@@ -7,7 +7,6 @@ const options = {
   }
 };
 
-// fetch API
 fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options)
   .then((response) => response.json())
   .then((data) => {
@@ -16,7 +15,6 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", opti
   })
   .catch((err) => console.error(err));
 
-// card
 function displayMovies(movies) {
   const movieList = document.getElementById("movieList");
   const tempHtml = movies
@@ -38,7 +36,6 @@ function displayMovies(movies) {
   movieList.innerHTML = tempHtml;
 }
 
-// 이미지 클릭 시 ID 알림
 function idMovies(movies) {
   document.querySelectorAll(".card-img-top").forEach((img, index) => {
     img.addEventListener("click", function () {
@@ -48,7 +45,6 @@ function idMovies(movies) {
   });
 }
 
-// 검색
 const searchMovies = function () {
   const search = document.getElementById("search").value.toLowerCase();
   const cards = document.querySelectorAll(".card");
