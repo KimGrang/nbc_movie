@@ -47,3 +47,10 @@ footer {
 .search_input {
   width: 200px;
 }
+
+#movieDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

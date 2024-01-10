@@ -20,17 +20,15 @@ function displayMovies(movies) {
   const tempHtml = movies
     .map(
       (movie) => `
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top" alt="...">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">${movie.title}</h4>
+          </div>
         </div>
-        <div class="card-body">
-          <h4 class="card-title">${movie.title}</h4>
-          <p class="card-text">Overview: <br>${movie.overview}</p>
-          <p class="card-text">Vote Average: ${movie.vote_average}</p>
-        </div>
-      </div>
-    `
+      `
     )
     .join("");
   movieList.innerHTML = tempHtml;
@@ -40,7 +38,7 @@ function idMovies(movies) {
   document.querySelectorAll(".card-img-top").forEach((img, index) => {
     img.addEventListener("click", function () {
       const movieId = movies[index].id;
-      alert(`ID: ${movieId}`);
+      window.location.href = `detail.html?id=${movieId}`;
     });
   });
 }
