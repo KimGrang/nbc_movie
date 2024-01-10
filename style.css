@@ -23,17 +23,21 @@ footer {
 
 .container {
   display: flex;
-  flex-flow:row wrap;
-
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-
+/* TODO flex 수정필요 */
 .card {
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 20px;
   text-align: center;
-  flex: 1;
+  flex-grow: 1;
+  flex-basis: 240px;
   padding: 1rem;
   margin: 1rem;
   background-color: yellow;
+  max-width: 240px;
+  height: 600px;
 }
 
 .card-img-top {
