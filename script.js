@@ -58,3 +58,12 @@ const searchMovies = function () {
   });
 };
 document.querySelector(".search_btn").addEventListener("click", searchMovies);
+
+const searchInput = document.querySelector('.search_input');
+searchInput.addEventListener('keydown', function(event){
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    searchMovies();
+  }
+}
+)
