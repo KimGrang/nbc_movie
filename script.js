@@ -24,6 +24,7 @@ function displayMovies(movies) {
           <div class="card-header">
             <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top" alt="...">
           </div>
+          <br>
           <div class="card-body">
             <h4 class="card-title">${movie.title}</h4>
           </div>
@@ -57,11 +58,10 @@ const searchMovies = function () {
 };
 document.querySelector(".search_btn").addEventListener("click", searchMovies);
 
-const searchInput = document.querySelector('.search_input');
-searchInput.addEventListener('keydown', function(event){
+const searchInput = document.querySelector(".search_input");
+searchInput.addEventListener("keydown", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     searchMovies();
   }
-}
-)
+});

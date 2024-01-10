@@ -29,6 +29,11 @@ footer {
 }
 /* TODO flex 수정필요 */
 .card {
+  font-size: 15p;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   border-radius: 20px;
   text-align: center;
   flex-grow: 1;
@@ -37,7 +42,7 @@ footer {
   margin: 1rem;
   background-color: yellow;
   max-width: 240px;
-  height: 600px;
+  height: auto;
 }
 
 .card-img-top {
