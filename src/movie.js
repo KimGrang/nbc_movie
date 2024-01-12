@@ -9,6 +9,7 @@ export const displayMovies = async () => {
           <div class="card-header" id=${movie.id}>
             <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top" alt="...">
           </div>
+          <br>
           <div class="card-body" id=${movie.id}>
             <h4 class="card-title">${movie.title}</h4>
           </div>
@@ -20,7 +21,7 @@ export const displayMovies = async () => {
 
   async function idMovies(event) {
     const target = event.target;
-    const movieId = target.closest('.card').id;
+    const movieId = target.closest(".card").id;
 
     if (movieId) {
       // alert(`id : ${movieId}`);
@@ -39,8 +40,19 @@ export const options = {
 };
 
 export const fetchMovieData = async function () {
-  const response = await fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options)
-  const data = await response.json()
-  console.log(data.results)
+  const response = await fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options);
+  const data = await response.json();
+  console.log(data.results);
   return data;
 };
+
+// //카드움직이게만드는함수 미완성//
+// let Cme = document.querySelector(".card");
+// Cme.addEventListener("mousemove", function (e) {
+//   let x = e.offsetX;
+//   let y = e.offsetY;
+//   let rotateY = (-1 / 5) * x + 20;
+//   let rotateX = (4 / 30) * y - 20;
+//   Cme.style = `transform : perspective(350px) rotateX(${rotateX}
+//     deg) rotateY(${rotateY}deg)`;
+// });

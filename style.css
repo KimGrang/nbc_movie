@@ -1,5 +1,5 @@
 body {
-  background-color: #e2e8f0;
+  background-color: #1d1d1d;
   width: 50%;
   max-width: 200%;
   min-width: 80%;
@@ -7,9 +7,21 @@ body {
 }
 
 header {
-  font-size: 300%;
-  margin: 10px;
-  padding: 10px;
+  width: 100wm;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: aliceblue;
+}
+ul {
+  margin-left: 20px;
+  list-style: none;
+}
+li {
+  float: left;
+  margin-right: 20px;
 }
 
 footer {
@@ -20,24 +32,20 @@ footer {
 .container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
 }
 /* TODO flex 수정필요 */
 .card {
-  font-size: 15p;
   font-weight: bold;
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-radius: 20px;
   text-align: center;
+  border: 3px solid rgb(255, 255, 255);
   flex-grow: 1;
-  flex-basis: 240px;
   padding: 1rem;
   margin: 1rem;
-  background-color: yellow;
-  max-width: 240px;
+  background-color: rgb(100, 100, 100);
+  max-width: 230px;
   height: auto;
 }
 
@@ -60,4 +68,102 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+.sbmain {
+  height: 40px;
+  background-color: rgb(78, 8, 8);
+}
+.search_box {
+  margin-top: 9px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+
+/*캐러셀css시작*/
+.ST {
+  margin: 0;
+  padding: 0;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(48, 48, 48);
+}
+
+.slider {
+  height: 400px;
+  overflow: hidden;
+}
+
+.slides {
+  width: 400vw;
+  height: 400px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  position: relative;
+  transition: 2s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* 버튼css*/
+.navigation-manual {
+  position: absolute;
+  width: 1600px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+.manual-btn {
+  border: 2px solid rgb(179, 179, 179);
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background-color: antiquewhite;
+}
+
+#radio1:checked ~ .first {
+  margin-left: -0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+
+.DD {
+  font-size: 40px;
+  color: rgb(154, 159, 163);
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
