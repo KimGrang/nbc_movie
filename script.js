@@ -60,7 +60,7 @@ const searchMovies = function () {
   });
 
   // 검색결과 없으면 없다고 표시
-  const nodata = document.getElementById("no_reselt");
+  const nodata = document.getElementById("no_result");
   if (hasdata) {
     nodata.style.display = "none"
   } else {
@@ -69,9 +69,9 @@ const searchMovies = function () {
 };
 document.querySelector(".search_btn").addEventListener("click", searchMovies);
 
-const searchInput = document.querySelector(".search_input");
-searchInput.addEventListener("keydown", function (event) {
-  if (event.keyCode === 13) {
+const searchInput = document.getElementById("search");
+searchInput.addEventListener('keyup', function (event) {
+  if (event.key === 'Enter') {
     event.preventDefault();
     searchMovies();
   }

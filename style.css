@@ -45,6 +45,12 @@ footer {
   border-radius: 20px 20px 20px 20px;
 }
 
+.warning {
+  margin-left: 10px;
+  color: red; 
+  font-weight: 700;
+}
+
 .search_input {
   width: 200px;
 }
