@@ -41,9 +41,9 @@ export const searchMovies = function () {
 
     warningMsg.innerText = '';
 };
-    searchInput.addEventListener('keyup', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            searchMovies();
-        }
-    });
+searchInput.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        searchMovies();
+    }
+});
