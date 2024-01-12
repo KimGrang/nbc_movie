@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Details</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container" id="movieDetails"></div>
-    <script src="script.js"></script>
-    <script src="detail.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Details</title>
+  <link rel="stylesheet" href="detail.css" />
+</head>
+
+<body>
+  <div class="container" id="movieDetails">
+
+  </div>
+  <form class="review_form" onsubmit="reviewMovies()">
+    <div class="review" id="movieReview">
+      <input type="text" class="review_input" id="Name" placeholder="Name" required />
+      <input type="text" class="review_input" id="Comment" placeholder="Comment" required />
+      <input type="text" class="review_input" id="PW" placeholder="Password" required />
+      <input type="button" class="review_btn" value="review" />
+    </div>
+    <div id="reviewList">
+
+    </div>
+  </form>
+  <script type="module" src="src/detail.js"></script>
+</body>
+
 </html>
