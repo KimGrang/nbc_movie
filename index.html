@@ -1,109 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Won's Movie</title>
-    <link href="reset.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
-  </head>
 
-  <body>
-    <header>
-      <div>
-        <ul>
-          <li>Home<span></span></li>
-          <li>FAQ<span></span></li>
-          <li>with<span></span></li>
-        </ul>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Won's Movie</title>
+  <link href="reset.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div>
+      <ul>
+        <li>Home<span></span></li>
+        <li>FAQ<span></span></li>
+        <li>with<span></span></li>
+      </ul>
+    </div>
+  </header>
+  <!-- 캐러셀시작 -->
+  <div class="ST">
+    <div class="slider">
+      <div class="slides">
+        <!-- 캐러셀사진 -->
+        <input type="radio" name="radio-btn" id="radio1" />
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+        <input type="radio" name="radio-btn" id="radio4" />
+        <div class="slide first">
+          <img src="asset/01.png" alt="" />
+        </div>
+        <div class="slide">
+          <img src="asset/00.png" alt="" />
+        </div>
+        <div class="slide">
+          <img src="asset/00.png" alt="" />
+        </div>
+        <div class="slide">
+          <img src="asset/00.png" alt="" />
+        </div>
+        <!-- 캐러셀사진 -->
+        <!--캐러셀버튼-->
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          <div class="auto-btn4"></div>
+        </div>
+        <!--캐러셀버튼-->
       </div>
-    </header>
-    <!-- 캐러셀시작 -->
-    <div class="ST">
-      <div class="slider">
-        <div class="slides">
-          <!-- 캐러셀사진 -->
-          <input type="radio" name="radio-btn" id="radio1" />
-          <input type="radio" name="radio-btn" id="radio2" />
-          <input type="radio" name="radio-btn" id="radio3" />
-          <input type="radio" name="radio-btn" id="radio4" />
-          <div class="slide first">
-            <img src="src/01.png" alt="" />
-          </div>
-          <div class="slide">
-            <img src="src/00.png" alt="" />
-          </div>
-          <div class="slide">
-            <img src="src/00.png" alt="" />
-          </div>
-          <div class="slide">
-            <img src="src/00.png" alt="" />
-          </div>
-          <!-- 캐러셀사진 -->
-          <!--캐러셀버튼-->
-          <div class="navigation-auto">
-            <div class="auto-btn1"></div>
-            <div class="auto-btn2"></div>
-            <div class="auto-btn3"></div>
-            <div class="auto-btn4"></div>
-          </div>
-          <!--캐러셀버튼-->
-        </div>
-        <div class="navigation-manual">
-          <label for="radio1" class="manual-btn"></label>
-          <label for="radio2" class="manual-btn"></label>
-          <label for="radio3" class="manual-btn"></label>
-          <label for="radio4" class="manual-btn"></label>
-        </div>
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
       </div>
     </div>
-    <main>
-      <div class="sbmain">
-        <div class="search_box">
-          <input type="text" class="search_input" id="search" placeholder="searching by title" autofocus />
-          <input type="button" class="search_btn" value="search" />
-        </div>
-      </div>
-      <div class="DD">- popular movie -</div>
-      <div class="card_box">
-        <div class="container" id="movieList"></div>
-        <div id="no_result" style="display: none">
-          <img src="./asset/message-warning.svg" alt="경고 메시지!!" style="height: 400px" />
-          <div>검색 결과가 없습니다.</div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <p>Won's Movie TMDB</p>
-      <a href="https://github.com/KimGrang">github</a>
-      <p>Tel. 123-456-7890</p>
-    </footer>
-    <script type="module" src="src/main.js"></script>
-  </body>
-  <body>
-    <header>
-      <img src="asset\logo.png" />
-      <h1>Won's Movie</h1>
-    </header>
-    <main>
+  </div>
+  <main>
+    <div class="sbmain">
       <div class="search_box">
         <input type="text" class="search_input" id="search" placeholder="searching by title" autofocus />
         <input type="button" class="search_btn" value="search" />
-        <span class="warning"></span>
       </div>
-      <div class="card_box">
-        <div class="container" id="movieList"></div>
-        <div id="no_result" style="display: none">
-          <img src="./asset/message-warning.svg" alt="경고 메시지!!" style="height: 400px" />
-          <div>검색 결과가 없습니다.</div>
-        </div>
+    </div>
+    <div class="DD">- popular movie -</div>
+    <div class="card_box">
+      <div class="container" id="movieList"></div>
+      <div id="no_result" style="display: none">
+        <img src="./asset/message-warning.svg" alt="경고 메시지!!" style="height: 400px" />
+        <div>검색 결과가 없습니다.</div>
       </div>
-    </main>
-    <footer>
-      <p>Won's Movie TMDB</p>
-      <a href="https://github.com/KimGrang">github</a>
-      <p>Tel. 123-456-7890</p>
-    </footer>
-    <script type="module" src="src/main.js"></script>
-  </body>
+    </div>
+  </main>
+  <footer>
+    <p>Won's Movie TMDB</p>
+    <a href="https://github.com/KimGrang">github</a>
+    <p>Tel. 123-456-7890</p>
+  </footer>
+  <script type="module" src="src/main.js"></script>
+</body>
+
+<body>
+  <header>
+    <img src="asset\logo.png" />
+    <h1>Won's Movie</h1>
+  </header>
+  <main>
+    <div class="search_box">
+      <input type="text" class="search_input" id="search" placeholder="searching by title" autofocus />
+      <input type="button" class="search_btn" value="search" />
+      <span class="warning"></span>
+    </div>
+    <div class="card_box">
+      <div class="container" id="movieList"></div>
+      <div id="no_result" style="display: none">
+        <img src="./asset/message-warning.svg" alt="경고 메시지!!" style="height: 400px" />
+        <div>검색 결과가 없습니다.</div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Won's Movie TMDB</p>
+    <a href="https://github.com/KimGrang">github</a>
+    <p>Tel. 123-456-7890</p>
+  </footer>
+  <script type="module" src="src/main.js"></script>
+</body>
+
 </html>

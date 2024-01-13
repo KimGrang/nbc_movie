@@ -70,7 +70,7 @@ function loadReviews() {
 
       let listItem = document.createElement('li');
       listItem.innerHTML =
-         '<strong>' + review.user + ':</strong> ' + review.review;
+         '<strong>' + review.user + ':</strong> ' + review.review + ' ';
 
       reviewList.appendChild(listItem);
    }
