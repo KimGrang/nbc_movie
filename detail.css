@@ -24,7 +24,6 @@ footer {
   align-items: flex-start;
 }
 
-
 /* 헤더 css */
 
 header {
@@ -42,15 +41,103 @@ header {
   flex-direction: row;
   background-color: aliceblue;
 }
- 
 
+h1 {
+  margin: 0px;
+  display: block;
+  padding: 0 19px;
+  border: 0;
+  font: inherit;
+  margin-block-start: 0.02em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 
+/*캐러셀css시작*/
+.ST {
+  margin: 0;
+  padding: 0;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(48, 48, 48);
+}
 
+.slider {
+  height: 400px;
+  overflow: hidden;
+}
 
+.slides {
+  width: 400vw;
+  height: 400px;
+  display: flex;
+}
 
+.slides input {
+  display: none;
+}
 
+.slide {
+  width: 20%;
+  position: relative;
+  transition: 2s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* 버튼css*/
+.navigation-manual {
+  position: absolute;
+  width: 1600px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid rgb(179, 179, 179);
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background-color: antiquewhite;
+}
+
+#radio1:checked ~ .first {
+  margin-left: -0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+} 
 
 /* TODO flex 수정필요 */
+#visual {
+  margin-top: 200px;
+}
+
 .card {
   border-radius: 20px;
   text-align: center;
@@ -79,6 +166,11 @@ header {
   margin-top: 50px;
 }
 
+.sbmain {
+  height: 40px;
+  background-color: rgb(78, 8, 8);
+  width: 100%;
+}
 
 
 
@@ -86,7 +178,7 @@ header {
 #review-num {
   color: white;
   margin: 50px 0;
-  font-size: 20px;
+  font-size: 19px;
   text-align: start;
 }
 
@@ -108,21 +200,13 @@ hr {
 
 .show-reviews {
   font-size: 18px;
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .reviews-btn {
   font-size: 18px;
   display: inline-flex;
   transform: translateY(15px);
-}
-
-.middleModal {
-  color: white;
-}
-
-.modalReview .show-reviews {
-  padding: 10px;
 }
 
 #edit {
@@ -135,19 +219,19 @@ hr {
   font-size: 16px;
 }
 
-h2 { 
+h2 {
   text-align: center;
   font-size: 38px;
 }
 
 .content {
-  font-size: 21px; 
+  font-size: 21px;
   max-width: 60%;
   text-align: center;
   line-height: 30px;
 }
 
-.tagline { 
+.tagline {
   padding: 0 30px;
   font-size: 18px;
 }
@@ -159,6 +243,10 @@ h2 {
 
 .heart {
   margin: 20px 0;
+}
+
+#btn{
+  cursor: pointer;
 }
 
 .vote {
@@ -182,6 +270,15 @@ h2 {
   text-align: start;
 }
 
+.middleModal {
+  color: white;
+  text-align: start;
+}
+
+.modalReview .show-reviews {
+  padding: 10px 0;
+}
+
 #name.name {
   font-size: 18px;
   width: 15%;
@@ -194,7 +291,7 @@ h2 {
 
 #textareaComment.textareaComment {
   font-size: 18px;
-  width: 25%;
+  width: 50%;
   padding: 4px 6px;
   color: white;
   background-color: transparent;
