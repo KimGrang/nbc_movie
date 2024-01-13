@@ -2,28 +2,93 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movie Details</title>
-  <link rel="stylesheet" href="detail.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="./detail.css">
 </head>
 
 <body>
-  <div class="container" id="movieDetails">
+  <header>
+    <div class="inner">
+      <a class="logo" onClick="location.href='index.html'">
+        <h1>Movie</h1>
+      </a>
+  </header>
 
-  </div>
-  <form id="reviewForm" onsubmit="reviewMovies()">
-    <div class="review" id="movieReview">
-      <input type="text" class="review_input" id="Name" placeholder="Name" required />
-      <input type="text" class="review_input" id="Comment" placeholder="Comment" required />
-      <input type="text" class="review_input" id="PW" placeholder="Password" required />
-      <input type="submit" class="review_btn" value="review" />
+  <section id="visual">
+    <div class="note">
+      <div class="word">
+        <h2></h2>
+        <p class="tagline"></p>
+        <div class="heart">
+          <p class="vote"></p>
+          <i id="btn" class="fa-regular fa-heart fa-2xl" style="color: rgb(255, 255, 255);" onclick="heartLight()"></i>
+          <p class="like">LIKE</p>
+        </div>
+          <div class="info">
+          <p>개봉 | <span class="date"></span></p>
+          <p>장르 | <span class="genre"></span></p>
+          <p>언어 | <span class="country"></span></p>
+          <p>상영시간 | <span class="time"></span>분</p>
+        </div>
+      </div>
+      <img src="" alt="">
     </div>
-    <div id="reviewList">
+    <hr>
+  </section>
 
+  <!-- Overview 부분-->
+  <section id="information">
+    <div class="account">
+      <h2>Overview</h2>
+      <p class="content"></p>
     </div>
-  </form>
-  <script type="module" src="src/detail.js"></script>
+  </section>
+
+
+      <!-- sdfsdfs -->
+      <!-- tab menu 부분 (content) -->
+      <div id="reviews" class="tabcontent">
+        <div class="content review-container">
+          <p id="review-num"></p>
+          <!-- 댓글 감싸주는 박스 -->
+            <div class="middleModal">
+              <div class="modalReview">
+              </div>
+            </div>
+
+            <!-- 폼 제출영역 박스 -->
+            <div class="form-container">
+              <form id="form">
+              <input id="name" class="name" type="text" placeholder="name"/> :
+              <input id="textareaComment" class="textareaComment" autocomplete='off'></input>
+              <!-- <input id="password" class="password" type="password" placeholder="password"/> -->
+              <div class="rating_box">
+                <div class="rating">
+                  <div class="star-ratings-fill space-x-2 text-lg"
+                      :style="{ width: ratingToPercent + '%' }"></div>
+                  <span class="rating_star">⭐⭐⭐⭐⭐</span>
+                  <input id = "star" type="range" value="1" step="1" min="0" max="10" />
+                </div>
+              </div>
+              <button type="submit">submit</button>
+            </form>
+            </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  
 </body>
+
+<script src="src/detail.js"></script>
 
 </html>
