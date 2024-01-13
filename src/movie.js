@@ -22,7 +22,6 @@ export const displayMovies = async () => {
   async function idMovies(event) {
     const target = event.target;
     const movieId = target.closest(".card").id;
-
     if (movieId) {
       // alert(`id : ${movieId}`);
       window.location.href = `detail.html?id=${movieId}`;
