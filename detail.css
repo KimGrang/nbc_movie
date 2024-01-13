@@ -1,59 +1,58 @@
 body {
-    background-color: #e2e8f0;
-    width: 50%;
-    max-width: 200%;
-    min-width: 80%;
-    margin: auto;
-  }
-  
-  header {
-    font-size: 300%;
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  main {
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  footer {
-    margin-bottom: 25px;
-    text-align: center;
-  }
-  
-  .container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  /* TODO flex 수정필요 */
-  .card {
-    border-radius: 20px;
-    text-align: center;
-    flex-grow: 1;
-    flex-basis: 240px;
-    padding: 1rem;
-    margin: 1rem;
-    background-color: yellow;
-    max-width: 240px;
-    height: 600px;
-  }
-  
-  .card-img-top {
-    border-radius: 20px 20px 20px 20px;
-  }
-  
-  .review_input {
-    width: 200px;
-  }
-  
-  #movieDetails {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
+  background-color: #e2e8f0;
+  width: 50%;
+  max-width: 200%;
+  min-width: 80%;
+  margin: auto;
+}
+
+header {
+  font-size: 300%;
+  margin: 10px;
+  padding: 10px;
+}
+
+main {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+footer {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* TODO flex 수정필요 */
+.cardd {
+  border-radius: 20px;
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 240px;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: yellow;
+  max-width: 240px;
+  height: 600px;
+}
+
+.card-img-top {
+  border-radius: 20px 20px 20px 20px;
+}
+
+.review_input {
+  width: 200px;
+}
+
+#movieDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

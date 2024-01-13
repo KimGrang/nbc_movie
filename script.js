@@ -20,16 +20,17 @@ function displayMovies(movies) {
   const tempHtml = movies
     .map(
       (movie) => `
-        <div class="card" style="width: 18rem;">
-          <div class="card-header">
-            <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top" alt="...">
-          </div>
-          <br>
-          <div class="card-body">
-            <h4 class="card-title">${movie.title}</h4>
-          </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top" alt="...">
         </div>
-      `
+        <div class="card-body">
+          <h4 class="card-title">${movie.title}</h4>
+          <p class="card-text">Overview: <br>${movie.overview}</p>
+          <p class="card-text">Vote Average: ${movie.vote_average}</p>
+        </div>
+      </div>
+    `
     )
     .join("");
   movieList.innerHTML = tempHtml;
@@ -45,7 +46,7 @@ function idMovies(movies) {
 }
 
 const searchMovies = function () {
-  const search = document.getElementById("search").value.toLowerCase().trim();;
+  const search = document.getElementById("search").value.toLowerCase().trim();
   const cards = document.querySelectorAll(".card");
   let hasdata = false; // 검색결과 확인
 
@@ -53,7 +54,7 @@ const searchMovies = function () {
     const title = card.querySelector(".card-title").innerText.toLowerCase().replace(/\s/g, "");
     if (title.includes(search)) {
       card.style.display = "block";
-      hasdata = true
+      hasdata = true;
     } else {
       card.style.display = "none";
     }
@@ -62,9 +63,9 @@ const searchMovies = function () {
   // 검색결과 없으면 없다고 표시
   const nodata = document.getElementById("no_result");
   if (hasdata) {
-    nodata.style.display = "none"
+    nodata.style.display = "none";
   } else {
-    nodata.style.display = "block"
+    nodata.style.display = "block";
   }
 };
 document.querySelector(".search_btn").addEventListener("click", searchMovies);
