@@ -1,15 +1,19 @@
 import { displayMovies } from "./movie.js";
+import { displayNowplaying } from "./now.js";
 import { searchMovies } from "./search.js";
 
-displayMovies();
-document.querySelector(".search_btn").addEventListener("click", searchMovies);
+document.addEventListener("DOMContentLoaded", () => {
+  displayMovies();
+  document.querySelector(".tab1").addEventListener("click", displayMovies);
+  document.querySelector(".tab2").addEventListener("click", displayNowplaying);
+  document.querySelector(".search_btn").addEventListener("click", searchMovies);
 
-// //캐러셀 함수
-let car = 1; //캐러셀 자동으로움직이는거
-setInterval(function () {
-  document.getElementById("radio" + car).checked = true;
-  car++;
-  if (car > 4) {
-    car = 1;
-  }
-}, 4000);
+  let car = 1;
+  setInterval(function () {
+    document.getElementById("radio" + car).checked = true;
+    car = (car % 4) + 1;
+  }, 4000);
+});
+
+document.getElementById("movieList").addEventListener("click", idMovies);
+

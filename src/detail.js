@@ -37,6 +37,8 @@ fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
       const movie_poster = document.querySelector("#visual").getElementsByTagName("img")[0];
       movie_poster.setAttribute("src", poster);
 
+      document.title = 'Detail_page : ' + response.title;
+
       document.getElementsByTagName("h2")[0].innerText = detail_title;
       document.getElementsByClassName("tagline")[0].innerText = detail_tagline;
       document.getElementsByClassName("vote")[0].innerText = "⭐ " + detail_average;
@@ -50,7 +52,6 @@ fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
    })
    .then((response) => console.log(response));
 // .catch(err => console.error(err));
-
 const saveId = localStorage.getItem("like-" + String(id));
 if (saveId === "true") {
    const like = document.querySelector("#btn");
@@ -395,3 +396,13 @@ rating_input.addEventListener("input", () => {
 });
 
 getReadInfo();
+
+// //캐러셀 함수
+let car = 1; //캐러셀 자동으로움직이는거
+setInterval(function () {
+   document.getElementById("radio" + car).checked = true;
+   car++;
+   if (car > 4) {
+      car = 1;
+   }
+}, 4000);
