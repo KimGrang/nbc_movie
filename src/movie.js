@@ -5,15 +5,15 @@ export const displayMovies = async () => {
   movieList.innerHTML = movies.results
     .map(
       (movie) => `
-        <div class="card" id=${movie.id} style="width: 18rem;">
-          <div class="card-header" id=${movie.id}>
-            <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top" alt="...">
-          </div>
-          <br>
-          <div class="card-body" id=${movie.id}>
-            <h4 class="card-title">${movie.title}</h4>
-          </div>
-        </div>`
+      <div class="card" id="${movie.id}" style="width: 18rem;">
+      <div class="card-header">
+        <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top" alt="...">
+      </div>
+      <br>
+      <div class="card-body">
+        <h4 class="card-title">${movie.title}</h4>
+      </div>
+    </div>`
     )
     .join("");
 

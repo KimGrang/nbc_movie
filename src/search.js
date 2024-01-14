@@ -18,7 +18,7 @@ export const searchMovies = function () {
         return;
     }
 
-    const search = document.getElementById("search").value.toLowerCase().trim();;
+    const search = document.getElementById("search").value.toLowerCase().trim();
     const cards = document.querySelectorAll(".card");
     let hasdata = false;
 
