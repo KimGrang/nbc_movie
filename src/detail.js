@@ -331,7 +331,7 @@ const putEditInfo = (e, compartPassword) => {
       <p><div class='textImg'></div><span class='textarea-name'>${item.name
             }</span> &nbsp; : &nbsp;<span class='textarea-comment'>${item.textareaComment}</span></p> 
       <span class='reviews-btn'>
-         <span>${"⭐".repeat(item.star_num)}</span>
+         <span>${"⭐".repeat(item.star_num / 2)}</span>
          <img id='edit' onclick='editInfo(event)' src="/asset/edit.svg" alt="수정버튼">
          <img id='remove' onclick='removeInfo(event)' src="/asset/close.svg" alt="삭제버튼">
       </span>
