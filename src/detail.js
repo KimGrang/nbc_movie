@@ -133,7 +133,7 @@ const reviewAction = (e) => {
             name: name.value,
             password: password,
             textareaComment: textareaComment.value,
-            star_num: Math.floor(rating_input.value / 2)
+            star_num: star
          }
       ];
 
