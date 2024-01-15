@@ -38,9 +38,9 @@ export const searchMovies = function () {
     } else {
         nodata.style.display = "block"
     }
-
     warningMsg.innerText = '';
 };
+
 searchInput.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();

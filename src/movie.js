@@ -23,7 +23,6 @@ export const displayMovies = async () => {
     const target = event.target;
     const movieId = target.closest(".card").id;
     if (movieId) {
-      // alert(`id : ${movieId}`);
       window.location.href = `detail.html?id=${movieId}`;
     }
   }
@@ -41,17 +40,5 @@ export const options = {
 export const fetchMovieData = async function () {
   const response = await fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options);
   const data = await response.json();
-  console.log(data.results);
   return data;
 };
-
-// //카드움직이게만드는함수 미완성//
-// let Cme = document.querySelector(".card");
-// Cme.addEventListener("mousemove", function (e) {
-//   let x = e.offsetX;
-//   let y = e.offsetY;
-//   let rotateY = (-1 / 5) * x + 20;
-//   let rotateX = (4 / 30) * y - 20;
-//   Cme.style = `transform : perspective(350px) rotateX(${rotateX}
-//     deg) rotateY(${rotateY}deg)`;
-// });

@@ -307,7 +307,7 @@ const goToBack = (e) => {
       if (item.password === nodeIdValue) {
          ParentNode.innerHTML = `
       <p><div class='textImg'></div><span class='textarea-name'>${item.name
-      }</span> &nbsp; : &nbsp; <span class='textarea-comment'>${item.textareaComment}</span></p> 
+            }</span> &nbsp; : &nbsp; <span class='textarea-comment'>${item.textareaComment}</span></p> 
       <span class='reviews-btn'>
       <span>${"⭐".repeat(item.star_num)}</span>
       <img id='edit' onclick='editInfo(event)' src="/asset/edit.svg" alt="수정버튼">
@@ -374,9 +374,9 @@ const removeInfo = (e) => {
 // 별점 드래그 할 때
 rating_input.forEach((input) => {
    input.addEventListener("change", () => {
-      star = parseInt(input.value) * 2; 
+      star = parseInt(input.value) * 2;
    });
- });
+});
 
 getReadInfo();
 

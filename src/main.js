@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let car = 1;
   setInterval(function () {
     document.getElementById("radio" + car).checked = true;
-    car = (car % 4) + 1;
+    car = (car % 5) + 1;
   }, 4000);
 });
-
-document.getElementById("movieList").addEventListener("click", idMovies);
 
