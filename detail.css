@@ -282,7 +282,7 @@ h2 {
 
 #name.name {
   font-size: 18px;
-  width: 15%;
+  width: 20%;
   padding: 4px 6px;
   color: white;
   background-color: transparent;
@@ -308,15 +308,25 @@ h2 {
   font-size: 20px;
 }
 
-#star {
+.form {
+  display: flex; 
+  justify-content: space-between;
+}
+
+form.star {
   margin-left: 20px;
   margin-top: 10px;
   transform: translateY(3px);
 }
 
 #button_s {
-  margin-top: 10px;
   font-size: 20px;
+  height: 70px;
+  width: auto;
+  border-radius: 10px;
+  background-color: rgb(100, 100, 100);
+  color: white;
+  font-weight: 700;
 }
 
 .ac_box {
@@ -337,8 +347,35 @@ h2 {
   margin: 0 150px 0 150px;
 }
 
+.rating {
+  display: flex;
+}
 
+.star {
+  appearance: none;
+  padding: 1px;
+}
 
+.star::after {
+  content: '☆';
+  color: hsl(60, 80%, 45%);
+  font-size: 20px;
+}
+
+.star:hover::after,
+.star:has(~ .star:hover)::after,
+.star:checked::after,
+.star:has(~ .star:checked)::after {
+  content: '★';
+}
+
+.star:hover ~ .star::after {
+  content: '☆';
+}
+
+.remove {
+  background-color: black;
+}
 /* detail.js -> will update by reviewC.R && main.js, movie.js -> prettier by add ;
 그리고 다음 작업하시는분 이미지 파일 asset으로 옮겨주세요.
 

@@ -114,22 +114,32 @@
 
       <!-- 폼 제출영역 박스 -->
       <div class="form-container">
-        <form id="form">
-          <input id="name" class="name" type="text" placeholder="작성자 이름" /> :
-          <input id="textareaComment" class="textareaComment" autocomplete='off' placeholder="내용을 입력하세요"></input>
-          <!-- <input id="password" class="password" type="password" placeholder="password"/> -->
-          <div class="rating_box">
-            <div class="rating">
-              <div class="star-ratings-fill space-x-2 text-lg" :style="{ width: ratingToPercent + '%' }"></div>
-              <span class="rating_star">⭐⭐⭐⭐⭐</span>
-              <input id="star" type="range" value="1" step="1" min="0" max="10" />
+        <form id="form" style="display: flex; justify-content: space-between;">
+          <div>
+            <input id="name" class="name" type="text" placeholder="작성자 이름" /> :
+            <input id="textareaComment" class="textareaComment" autocomplete='off' placeholder="내용을 입력하세요"></input>
+            <!-- <input id="password" class="password" type="password" placeholder="password"/> -->
+            <div class="rating_box">
+              <!-- <div class="rating">
+                <div class="star-ratings-fill space-x-2 text-lg" :style="{ width: ratingToPercent + '%' }"></div>
+                <span class="rating_star">⭐⭐⭐⭐⭐</span>
+                <input id="star" type="range" value="1" step="1" min="0" max="10" />
+              </div> -->
+              <div class="rating">
+                <input type="radio" class="star" value="1">
+                <input type="radio" class="star" value="2">
+                <input type="radio" class="star" value="3">
+                <input type="radio" class="star" value="4">
+                <input type="radio" class="star" value="5">
+              </div>
+
             </div>
           </div>
-          <button id="button_s" type="submit">submit</button>
+          <span>
+            <button id="button_s" type="submit">submit</button>
+          </span>
         </form>
       </div>
-
-
     </div>
   </div>
   </div>

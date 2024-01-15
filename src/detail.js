@@ -12,8 +12,8 @@ const urlSearchParamsObject = new URLSearchParams(link[1]);
 const id = urlSearchParamsObject.get("id");
 
 // review
-const rating_input = document.querySelector(".rating > input");
-const rating_star = document.querySelector(".rating_star");
+const rating_input = document.querySelectorAll(".rating > input");
+const rating_star = document.querySelector(".rating .star");
 let star = 0;
 let review_num = 0;
 
@@ -122,8 +122,8 @@ const reviewAction = (e) => {
 
    if (!password) {
       return alert("비밀번호를 입력해주세요");
-   } else if (!/^[a-zA-Z]+[0-9]*$/.test(password)) {
-      return alert("영문 + 숫자의 조합으로 입력해주세요");
+   } else if (!/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{4,}$/.test(password)) {
+      return alert("영문 + 숫자의 조합으로 4글자 이상 입력해주세요");
    }
 
    // 1.키에 값이 없는 경우
@@ -206,28 +206,15 @@ const getReadInfo = () => {
                nweDiv.classList.add("show-reviews");
 
                nweDiv.innerHTML = `
-         <p><div class='textImg'></div><span class='textarea-name'>${item.name
-                  }</span> &nbsp; : &nbsp; <span class='textarea-comment'>${item.textareaComment}</span></p> 
-         <span class='reviews-btn'>
-             <span>${"⭐".repeat(item.star_num)}</span>
-             <button id='edit' onclick='editInfo(event)'>edit</button>
-             <button id='remove' onclick='removeInfo(event)'>remove</button>
-         </span>
+                  <p><div class='textImg'></div><span class='textarea-name'>${item.name}</span> &nbsp; 
+                  : &nbsp; <span class='textarea-comment'>${item.textareaComment}</span></p> 
+                  <span class='reviews-btn'><span>${"⭐".repeat(item.star_num / 2)}</span>
+                     <img id='edit' onclick='editInfo(event)' src="/asset/edit.svg" alt="수정버튼">
+                     <img id='remove' onclick='removeInfo(event)' src="/asset/close.svg" alt="삭제버튼">
+                  </span>
          `;
 
                modalReview.appendChild(nweDiv);
-
-               // if (item.star_num == 5) {
-               //   document.getElementById(item.name + '_star').innerText = '⭐⭐⭐⭐⭐';
-               // } else if (item.star_num == 4) {
-               //   document.getElementById(item.name + '_star').innerText = '⭐⭐⭐⭐';
-               // } else if (item.star_num == 3) {
-               //   document.getElementById(item.name + '_star').innerText = '⭐⭐⭐';
-               // } else if (item.star_num == 2) {
-               //   document.getElementById(item.name + '_star').innerText = '⭐⭐';
-               // } else {
-               //   document.getElementById(item.name + '_star').innerText = '⭐';
-               // }
 
                modalReview.scrollTop = modalReview.scrollHeight;
                review_num++;
@@ -247,17 +234,15 @@ const editInfo = (e) => {
    //댓글 수정할때 덮어 쓰여질 배경색상
    ParentNode.classList.add("edit-background");
    ParentNode.innerHTML = `          
-     <input class='editName' type='text' > : 
-     <input class='editComment'  type='text' >
-     <span class='edit-button'>
-     <button id='clear' onclick='submitEditInfo(event)'>
-       save
-     </button>
-     <button id='clear' onclick='goToBack(event)' >
-       back
-     </button>
-     </span>
-     `;
+   <input class='editName' type='text' > : 
+   <input class='editComment'  type='text' >
+   <span class='edit-button'>
+   <button id='clear' onclick='submitEditInfo(event)'>
+   save</button>
+   <button id='clear' onclick='goToBack(event)' >
+   back</button>
+   </span>
+   `;
 };
 
 // 댓글수정 완료버튼 클릭
@@ -321,14 +306,14 @@ const goToBack = (e) => {
    JSON.parse(localStorage.getItem(id)).forEach((item) => {
       if (item.password === nodeIdValue) {
          ParentNode.innerHTML = `
-       <p><div class='textImg'></div><span class='textarea-name'>${item.name
-            }</span> &nbsp; : &nbsp; <span class='textarea-comment'>${item.textareaComment}</span></p> 
-       <span class='reviews-btn'>
-           <span>${"⭐".repeat(item.star_num)}</span>
-           <button id='edit' onclick='editInfo(event)'>edit</button>
-           <button id='remove' onclick='removeInfo(event)'>remove</button>
-       </span>
-       `;
+      <p><div class='textImg'></div><span class='textarea-name'>${item.name
+      }</span> &nbsp; : &nbsp; <span class='textarea-comment'>${item.textareaComment}</span></p> 
+      <span class='reviews-btn'>
+      <span>${"⭐".repeat(item.star_num)}</span>
+      <img id='edit' onclick='editInfo(event)' src="/asset/edit.svg" alt="수정버튼">
+      <img id='remove' onclick='removeInfo(event)' src="/asset/close.svg" alt="삭제버튼">
+      </span>
+      `;
       }
    });
 };
@@ -340,26 +325,23 @@ const putEditInfo = (e, compartPassword) => {
 
    value.forEach((item) => {
       if (item.password === compartPassword) {
-         //e.currentTarget.parentNode ==> <div id="user-password" class="show-reviews"></div>
-
          ParentNode.classList.remove("edit-background");
          ParentNode.innerHTML = `
-        
-       <p><div class='textImg'></div><span class='textarea-name'>${item.name
+      
+      <p><div class='textImg'></div><span class='textarea-name'>${item.name
             }</span> &nbsp; : &nbsp;<span class='textarea-comment'>${item.textareaComment}</span></p> 
-       <span class='reviews-btn'>
-           <span>${"⭐".repeat(item.star_num)}</span>
-           <button id='edit' onclick='editInfo(event)'>edit</button>
-           <button id='remove' onclick='removeInfo(event)'>remove</button>
-       </span>
-        `;
+      <span class='reviews-btn'>
+         <span>${"⭐".repeat(item.star_num)}</span>
+         <img id='edit' onclick='editInfo(event)' src="/asset/edit.svg" alt="수정버튼">
+         <img id='remove' onclick='removeInfo(event)' src="/asset/close.svg" alt="삭제버튼">
+      </span>
+      `;
       }
    });
 };
 
 // 댓글 제거
 const removeInfo = (e) => {
-   //e.currentTarget.parentNode ==> <div id="user-password" class="show-reviews"></div>
    if (window.confirm("삭제하시겠습니까?")) {
       const promptObj = prompt("비밀번호를 입력하세요");
       const len = JSON.parse(localStorage.getItem(id)).length;
@@ -390,10 +372,11 @@ const removeInfo = (e) => {
 };
 
 // 별점 드래그 할 때
-rating_input.addEventListener("input", () => {
-   rating_star.style.width = `${rating_input.value * 10}%`;
-   star = parseInt(rating_input.value / 2);
-});
+rating_input.forEach((input) => {
+   input.addEventListener("change", () => {
+      star = parseInt(input.value) * 2; 
+   });
+ });
 
 getReadInfo();
 

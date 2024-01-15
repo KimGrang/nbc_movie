@@ -139,8 +139,8 @@ a:hover {
 }
 .warning {
   margin-left: 10px;
-  color: red;
-  font-weight: 700;
+  color: #777777;
+  font-weight: 800;
 }
 #movieDetails {
   display: flex;
